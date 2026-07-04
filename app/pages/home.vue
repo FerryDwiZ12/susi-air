@@ -158,10 +158,10 @@ const getProgressWidth = (currentHours: number, limit: number) => {
             </div>
 
             <p class="text-[11px] text-text-secondary mt-2 font-medium">
-              <template v-if="limitVal - (pilot.currentHoursSummary?.[key] ?? 0) > 0">
+              <template v-if="limitVal - (pilot.currentHoursSummary[key] ?? 0) >= 0">
                 Remaining:
                 <span class="font-data font-bold text-slate-700">
-                  {{ (limitVal - (pilot.currentHoursSummary?.[key] ?? 0)).toFixed(1) }}h
+                  {{ (limitVal - (pilot.currentHoursSummary[key] ?? 0)).toFixed(1) }}h
                 </span>
               </template>
               <template v-else>
